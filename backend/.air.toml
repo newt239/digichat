@@ -1,7 +1,7 @@
 # Air 設定
 [build]
 bin = "main"      # コンパイルされたバイナリ名
-cmd = "go build -o bin/elf"  # ビルドコマンド
+cmd = "go run ."  # ビルドコマンド
 include_ext = ["go"]        # ウォッチ対象の拡張子
 exclude_dir = ["frontend"]  # ウォッチしないディレクトリ
 

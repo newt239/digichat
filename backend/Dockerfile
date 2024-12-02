@@ -6,7 +6,7 @@ WORKDIR /app
 # HMRとしてAirをインストール
 RUN go install github.com/air-verse/air@latest
 
-COPY go.mod go.sum ./
+COPY go.mod go.sum .air.toml ./
 RUN go mod download
 
 # ソースコードをコピー
