@@ -4,10 +4,17 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
+	"github.com/newt239/digichat/handlers"
 )
 
 func main() {
 	e := echo.New()
+
+	e.GET("/ws", func(c echo.Context) error {
+		handler := handlers.NewWebsocketHandler()
+		handler.Handle(c.Response(), c.Request())
+		return nil
+	})
 
 	// ルートエンドポイント
 	e.GET("/", func(c echo.Context) error {
