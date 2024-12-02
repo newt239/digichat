@@ -5,12 +5,17 @@ import (
 	"net/http"
 
 	"github.com/gorilla/websocket"
+	"github.com/newt239/digichat/domains"
 )
 
-type WebsocketHandler struct {}
+type WebsocketHandler struct {
+	hub *domains.Hub
+}
 
-func NewWebsocketHandler() *WebsocketHandler {
-	return &WebsocketHandler{}
+func NewWebsocketHandler(hub *domains.Hub) *WebsocketHandler {
+	return &WebsocketHandler{
+		hub: hub,
+	}
 }
 
 func (h *WebsocketHandler) Handle(w http.ResponseWriter, r *http.Request) {
