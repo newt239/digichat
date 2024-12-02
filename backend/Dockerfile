@@ -1,13 +1,11 @@
-# ベースイメージ
 FROM golang:1.23 AS base
+ENV TZ=Asia/Tokyo
 
-# 作業ディレクトリを設定
 WORKDIR /app
 
-# Airをインストール
+# HMRとしてAirをインストール
 RUN go install github.com/air-verse/air@latest
 
-# 必要なファイルをコピー
 COPY go.mod go.sum ./
 RUN go mod download
 
