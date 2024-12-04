@@ -2,7 +2,6 @@ import {
   Burger,
   Group,
   AppShell as MantineAppShell,
-  Skeleton,
   Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
@@ -38,11 +37,6 @@ const AppShell: React.FC<AppShellProps> = ({ children }) => {
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Text>Navbar</Text>
         </Group>
-        {Array(15)
-          .fill(0)
-          .map((_, index) => (
-            <Skeleton key={index} h={28} mt="sm" animate={false} />
-          ))}
       </MantineAppShell.Navbar>
       <MantineAppShell.Main>{children}</MantineAppShell.Main>
       <MantineAppShell.Aside p="md">Aside</MantineAppShell.Aside>
