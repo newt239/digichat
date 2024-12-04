@@ -13,7 +13,7 @@ export const MessageInput: React.FC = () => {
   // WebSocketの接続を管理
   useEffect(() => {
     const connectToRoom = () => {
-      const socket = new WebSocket(`http://localhost:8080/ws?room=general`);
+      const socket = new WebSocket(`ws://localhost:8080/ws?room=general`);
       socketRef.current = socket;
 
       socket.onopen = () => {

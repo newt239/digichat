@@ -41,6 +41,7 @@ func handleWebSocket(c echo.Context) error {
 	// WebSocket接続をアップグレード
 	conn, err := upgrader.Upgrade(c.Response(), c.Request(), nil)
 	if err != nil {
+		log.Println("Error upgrading to WebSocket:", err)
 		return err
 	}
 	defer conn.Close()
