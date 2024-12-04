@@ -1,11 +1,16 @@
 FROM node:22-slim
 ENV TZ=Asia/Tokyo
 
+# Python をインストール
+RUN apt-get update && apt-get install -y python3 python3-dev python3-pip
+
 WORKDIR /app
 
 RUN npm install -g pnpm
 
 COPY ./package.json ./package.json
+
+RUN pnpm store prune
 
 RUN pnpm install
 
