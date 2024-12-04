@@ -5,6 +5,7 @@ import {
   Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { MessageInput } from "./block/MessageInput";
 
 type AppShellProps = {
   children: React.ReactNode;
@@ -40,7 +41,9 @@ const AppShell: React.FC<AppShellProps> = ({ children }) => {
       </MantineAppShell.Navbar>
       <MantineAppShell.Main>{children}</MantineAppShell.Main>
       <MantineAppShell.Aside p="md">Aside</MantineAppShell.Aside>
-      <MantineAppShell.Footer p="md">Footer</MantineAppShell.Footer>
+      <MantineAppShell.Footer p="md">
+        <MessageInput />
+      </MantineAppShell.Footer>
     </MantineAppShell>
   );
 };

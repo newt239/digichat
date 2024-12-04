@@ -1,4 +1,4 @@
-import { MessageInput } from "#/components/ui/block/MessageInput";
+import { Channel } from "#/components/ui/block/Channel";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/app/")({
@@ -8,8 +8,7 @@ export const Route = createFileRoute("/app/")({
 function RouteComponent() {
   return (
     <div>
-      Hello World!
-      <MessageInput />
+      <Channel />
     </div>
   );
 }
