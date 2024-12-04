@@ -2,6 +2,7 @@ FROM node:22-slim
 ENV TZ=Asia/Tokyo
 
 # Python をインストール
+# npmからWebSocketをインストールする際に必要
 RUN apt-get update && apt-get install -y python3 python3-dev python3-pip
 
 WORKDIR /app
@@ -9,6 +10,8 @@ WORKDIR /app
 RUN npm install -g pnpm
 
 COPY ./package.json ./package.json
+
+COPY ./.env ./.env
 
 RUN pnpm store prune
 
