@@ -11,8 +11,6 @@ RUN npm install -g pnpm
 
 COPY ./package.json ./package.json
 
-COPY ./.env ./.env
-
 RUN pnpm store prune
 
 RUN pnpm install
