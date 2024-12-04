@@ -41,7 +41,7 @@ const AppShell: React.FC<AppShellProps> = ({ children }) => {
       </MantineAppShell.Navbar>
       <MantineAppShell.Main>{children}</MantineAppShell.Main>
       <MantineAppShell.Aside p="md">Aside</MantineAppShell.Aside>
-      <MantineAppShell.Footer p="md">
+      <MantineAppShell.Footer h="auto" p="1rem" withBorder={false}>
         <MessageInput />
       </MantineAppShell.Footer>
     </MantineAppShell>
